@@ -1,3 +1,29 @@
 body {
     background-color: lightgray;
 }
+
+/* Styles de la classe .book */
+.book {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Titre du livre */
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Auteur du livre */
+  .author {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+  }

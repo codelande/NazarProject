@@ -5,37 +5,21 @@
 {% block body %}
     <h1>Book index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>PublicationDate</th>
-                <th>AdditionDate</th>
-                <th>ModificationDate</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for book in books %}
-            <tr>
-                <td>{{ book.Title }}</td>
-                <td>{{ book.Author }}</td>
-                <td>{{ book.PublicationDate ? book.PublicationDate|date('Y-m-d') : '' }}</td>
-                <td>{{ book.AdditionDate ? book.AdditionDate|date('Y-m-d') : '' }}</td>
-                <td>{{ book.ModificationDate ? book.ModificationDate|date('Y-m-d') : '' }}</td>
-                <td>
+        <div class="book">
+                <p class="title">{{ book.Title }}</p>
+                <p class="author">{{ book.Author }}</p>
+                <p>{{ book.PublicationDate ? book.PublicationDate|date('Y-m-d') : '' }}</p>
+                <p>{{ book.AdditionDate ? book.AdditionDate|date('Y-m-d') : '' }}</p>
+                <p>{{ book.ModificationDate ? book.ModificationDate|date('Y-m-d') : '' }}</p>
+                <p>
                     <a href="{{ path('app_book_show', {'id': book.id}) }}">show</a>
                     <a href="{{ path('app_book_edit', {'id': book.id}) }}">edit</a>
-                </td>
-            </tr>
+                </p>
+        </div>
         {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
+                <div colspan="7">no records found</div>
         {% endfor %}
-        </tbody>
-    </table>
 
     <a href="{{ path('app_book_new') }}">Create new</a>
 {% endblock %}
